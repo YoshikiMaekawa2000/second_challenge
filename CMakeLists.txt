@@ -137,7 +137,7 @@ include
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/second_challenge_node.cpp)
-# add_executable(local_map_creator src/local_map_creator.cpp)
+add_executable(local_map_creator src/local_map_creator.cpp)
 add_executable(global_path_planner src/global_path_planner.cpp)
 
 ## Rename C++ executable without prefix
@@ -149,7 +149,7 @@ add_executable(global_path_planner src/global_path_planner.cpp)
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-# add_dependencies(local_map_creator ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(local_map_creator ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(global_path_planner ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
@@ -157,9 +157,9 @@ add_dependencies(global_path_planner ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catki
 #   ${catkin_LIBRARIES}
 # )
 
-# target_link_libraries(local_map_creator
-  # ${catkin_LIBRARIES}
-# )
+target_link_libraries(local_map_creator
+  ${catkin_LIBRARIES}
+)
 target_link_libraries(global_path_planner
   ${catkin_LIBRARIES}
 )
