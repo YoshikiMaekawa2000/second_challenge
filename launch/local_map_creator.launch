@@ -1,0 +1,9 @@
+<?xml version = "1.0"?>
+
+<launch>
+    <node pkg="second_challenge" name="local_map_creator" type="local_map_cretaor.cpp" output="screen">
+        <param name="hz" type="int" value="10"/>
+    </node>
+
+    <node pkg=
+
